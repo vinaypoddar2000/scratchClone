@@ -2,6 +2,12 @@
 
 A simplified visual programming environment inspired by MIT's Scratch, built with React. This interactive application allows users to create animations and control multiple sprites using drag-and-drop programming blocks.
 
+## Website Link
+- https://scratchclone-ten.vercel.app/
+
+## Demo Video
+- https://drive.google.com/file/d/1qIn2PXr1J7z8IBtYvNFuJ-z0YOm3G-Wj/view?usp=sharing
+
 ## 🎯 Features
 
 ### Sprite Management
@@ -41,7 +47,7 @@ A simplified visual programming environment inspired by MIT's Scratch, built wit
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/vinaypoddar2000/scratchClone.git
 cd scratch-app
 ```
 
