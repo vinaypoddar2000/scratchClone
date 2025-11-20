@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Mini Scratch Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simplified visual programming environment inspired by MIT's Scratch, built with React. This interactive application allows users to create animations and control multiple sprites using drag-and-drop programming blocks.
 
-## Available Scripts
+## 🎯 Features
 
-In the project directory, you can run:
+### Sprite Management
+- **Add Sprites**: Add up to 4 different sprites (Cat, Dog, Fox, Panda)
+- **Remove Sprites**: Hover over any sprite and click the delete button to remove it
+- **Multiple Sprites**: Control multiple sprites simultaneously, each with independent scripts
+- **Sprite Selection**: Switch between sprites to edit their individual scripts
 
-### `npm start`
+### Programming Blocks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Motion Blocks (Blue)
+- **Move X steps**: Move the sprite forward by a specified number of steps
+- **Turn X degrees**: Rotate the sprite by a specified angle
+- **Go to x:X y:Y**: Translocate the sprite to specific coordinates
+- **Repeat X times**: Repeat an action 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Looks Blocks (Purple)
+- **Say "text" for X secs**: Display a speech bubble with custom text
+- **Think "text" for X secs**: Display a thought bubble with custom text
 
-### `npm test`
+### Interactive Features
+- **Drag & Drop**: Drag blocks from the block section to the script area
+- **Editable Parameters**: Click on any parameter in the script area to customize values
+- **Remove Blocks**: Delete individual blocks from scripts using the delete icon
+- **Reset Positions**: Return all sprites to their initial positions
+- **Play**: Execute all scripts simultaneously for all sprites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Hero Features
+- **Collision Detection**: Sprites automatically detect when they collide with each other
+- **Script Swapping**: When two sprites collide, they swap their animation scripts
+- **Parallel Execution**: All sprite scripts run simultaneously when you press Play
+- **Visual Feedback**: Sprites display "Swapped!" messages when collision occurs
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd scratch-app
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Start the development server:
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Open your browser and navigate to `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Basic Workflow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Select a Sprite**
+   - Use the dropdown menu in the Scripts section to choose which sprite you want to program
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Add Programming Blocks**
+   - Drag blocks from the blocks section to the script area in the middle
+   - Blocks will be added to the currently selected sprite
 
-## Learn More
+3. **Customize Block Parameters**
+   - Click on any number or text field within a block to edit its value
+   - For example, change "Move 10 steps" to "Turn 45 degrees"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Build Your Animation**
+   - Add multiple blocks to create complex sequences
+   - Each sprite can have its own unique script
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Run Your Program**
+   - Click the green "Play" button to execute all scripts
+   - Watch your sprites animate on the stage!
 
-### Code Splitting
+6. **Reset and Try Again**
+   - Use the "Reset" button to return sprites to starting positions
+   - Modify scripts and run again
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Technologies Used
 
-### Analyzing the Bundle Size
+- **React**: UI framework
+- **Lucide React**: Icon library
+- **Tailwind CSS**: Styling and layout
+- **JavaScript ES6+**: Core programming logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
