@@ -6,7 +6,7 @@ A simplified visual programming environment inspired by MIT's Scratch, built wit
 - https://scratchclone-ten.vercel.app/
 
 ## Demo Video
-- https://drive.google.com/file/d/1qIn2PXr1J7z8IBtYvNFuJ-z0YOm3G-Wj/view?usp=sharing
+- https://drive.google.com/file/d/1yG6pe96XiLBWiAurwUuTwteFuuhwoLS-/view?usp=sharing
 
 ## 🎯 Features
 
