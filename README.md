@@ -37,9 +37,9 @@ A simplified visual programming environment inspired by MIT's Scratch, built wit
 
 ### Hero Features
 - **Collision Detection**: Sprites automatically detect when they collide with each other
-- **Script Swapping**: When two sprites collide, they swap their animation scripts
+- **Script Swapping**: When two sprites collide, they change direction of their animation scripts
 - **Parallel Execution**: All sprite scripts run simultaneously when you press Play
-- **Visual Feedback**: Sprites display "Swapped!" messages when collision occurs
+- **Visual Feedback**: Sprites display "Direction Reversed!" messages when collision occurs
 
 ## 🚀 Getting Started
 

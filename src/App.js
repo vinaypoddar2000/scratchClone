@@ -178,20 +178,51 @@ export default function ScratchClone() {
         const sprite2 = sprites.find(s => s.id === results[j].id);
         
         if (sprite1 && sprite2 && checkCollision(results[i], results[j])) {
+
+          const oppositeDirectionBlocks1 = sprite1.blocks.map(block => {
+            const newBlock = { ...block, params: [...block.params] };
+            if (block.id === 'move' || block.id === 'turn') {
+              newBlock.params[0] = -Number(block.params[0]);
+            } else if (block.id === 'goto') {
+              newBlock.params[0] = -Number(block.params[0]);
+              newBlock.params[1] = -Number(block.params[1]);
+            } else if (block.id === 'repeat') {
+              // As repeat count stays same so no reverse needed
+            }
+            return newBlock;
+          });
+          
+          const oppositeDirectionBlocks2 = sprite2.blocks.map(block => {
+            const newBlock = { ...block, params: [...block.params] };
+            if (block.id === 'move' || block.id === 'turn') {
+              newBlock.params[0] = -Number(block.params[0]);
+            } else if (block.id === 'goto') {
+              newBlock.params[0] = -Number(block.params[0]);
+              newBlock.params[1] = -Number(block.params[1]);
+            } else if (block.id === 'repeat') {
+              // As repeat count stays same so no reverse needed
+            }
+            return newBlock;
+          });
+          
           setSprites(prev => prev.map(s => {
-            if (s.id === sprite1.id) return { ...s, blocks: [...sprite2.blocks] };
-            if (s.id === sprite2.id) return { ...s, blocks: [...sprite1.blocks] };
+            if (s.id === sprite1.id) {
+              return { ...s, blocks: oppositeDirectionBlocks1 };
+            }
+            if (s.id === sprite2.id) {
+              return { ...s, blocks: oppositeDirectionBlocks2 };
+            }
             return s;
           }));
           
           setSprites(prev => prev.map(s => {
             if (s.id === sprite1.id || s.id === sprite2.id) {
-              return { ...s, message: 'Swapped!', messageType: 'say' };
+              return { ...s, message: 'Direction Reversed!', messageType: 'say' };
             }
             return s;
           }));
           
-          await sleep(1000);
+          await sleep(1500);
           
           setSprites(prev => prev.map(s => {
             if (s.id === sprite1.id || s.id === sprite2.id) {
@@ -199,6 +230,14 @@ export default function ScratchClone() {
             }
             return s;
           }));
+          
+          const sprite1WithReverseDirection = { ...sprite1, blocks: oppositeDirectionBlocks1, x: results[i].x, y: results[i].y, rotation: results[i].rotation };
+          const sprite2WithReverseDirection = { ...sprite2, blocks: oppositeDirectionBlocks2, x: results[j].x, y: results[j].y, rotation: results[j].rotation };
+          
+          await Promise.all([
+            executeBlocksForSprite(sprite1WithReverseDirection),
+            executeBlocksForSprite(sprite2WithReverseDirection)
+          ]);
         }
       }
     }
